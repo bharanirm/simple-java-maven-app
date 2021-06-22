@@ -4,6 +4,14 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
+                
+              /*  mvn archetype:generate -DgroupId=io.stockgeeks \
+                       -DartifactId=webproject-example \
+                       -DarchetypeArtifactId=maven-archetype-webapp */
+                
+             /*   mvn archetype:generate -DgroupId=io.stockgeeks \
+                       -DartifactId=my-app \
+                       -DarchetypeArtifactId=maven-archetype-my-app */
             }
         }
         stage('Test') {
