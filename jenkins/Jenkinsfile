@@ -32,9 +32,9 @@ pipeline {
         }
     }
     // Script //
-node {
+
     echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-}
+
     post {
         always {
             archiveArtifacts artifacts: 'target/*.jar', fingerprint: true, onlyIfSuccessful: true
