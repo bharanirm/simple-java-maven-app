@@ -32,10 +32,7 @@ pipeline {
             }
         }
     }
-    // Script //
-
-   
-
+    
     post {
         always {
             archiveArtifacts artifacts: 'target/*.jar', fingerprint: true, onlyIfSuccessful: true
