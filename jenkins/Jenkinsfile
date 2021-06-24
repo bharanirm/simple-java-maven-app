@@ -37,11 +37,12 @@ pipeline {
                    def workspace = WORKSPACE
                    workspace = env.WORKSPACE
                    def  FILES_NAME = "/var/lib/jenkins/workspace/OPTIMUM/simple-java-maven-app/target/my-app-1.0-SNAPSHOT.jar"
-                    echo "Current workspace is ${env.WORKSPACE}/${FILES_DIR}"
+                  //  echo "Current workspace is ${env.WORKSPACE}/${FILES_DIR}"
                      echo "Current workspace is $WORKSPACE"
                         
                    // sha256sum = sh(returnStdout: true, script: "sha256sum '${fileName}'")
-                  sha256sum = sh(returnStdout: true, script: "sha256sum '${env.WORKSPACE}/target/my-app-1.0-SNAPSHOT.jar'")
+                 // sha256sum = sh(returnStdout: true, script: "sha256sum '${env.WORKSPACE}/target/my-app-1.0-SNAPSHOT.jar'")
+                        sha256sum = sh(returnStdout: true, script: "sha256sum '${FILES_NAME}'")
                        
                     echo "Check sum is $sha256sum"
                     sh "echo ' {\"group\":\"my.group\"' > artifact.txt"
