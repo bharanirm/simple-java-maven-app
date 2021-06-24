@@ -31,8 +31,7 @@ pipeline {
                  echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
-    }
-    stage('Generate Artifact') {
+        stage('Generate Artifact') {
                 steps {
                     script {
                    def workspace = WORKSPACE
@@ -53,6 +52,8 @@ pipeline {
                     }
                 }
             }
+    }
+    
     post {
         always {
             archiveArtifacts artifacts: 'target/*.jar', fingerprint: true, onlyIfSuccessful: true
