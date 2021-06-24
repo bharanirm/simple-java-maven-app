@@ -36,7 +36,7 @@ pipeline {
                     script {
                    def workspace = WORKSPACE
                    workspace = env.WORKSPACE
-                    echo "Current workspace is ${env.WORKSPACE}"
+                    echo "Current workspace is ${env.WORKSPACE}/target/*.jar"
                      echo "Current workspace is $WORKSPACE"
                         
                     // sha256sum = sh(returnStdout: true, script: "sha256sum '${fileName}'")
