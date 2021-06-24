@@ -44,7 +44,7 @@ pipeline {
                  //  sha256sum = sh(returnStdout: true, script: "sha256sum '${env.WORKSPACE}/target/my-app-1.0-SNAPSHOT.jar'")
                         sha256sum = sh(returnStdout: true, script: "sha256sum '${FILES_NAME}'")
                     echo "Check sum is $sha256sum"
-                    sh "echo ' {"\group\:\my.group\"' > artifact.txt"
+                    sh "echo ' {\"group\:\my.group\"' > artifact.txt"
                     sh "echo ',\"checksum\":\"${sha256sum}\"' >> artifact.txt"
                     sh "echo ',\"artifact\":\"my-demo\"' >> artifact.txt"
                     sh "echo ',\"database\":\"yes\"' >> artifact.txt"
